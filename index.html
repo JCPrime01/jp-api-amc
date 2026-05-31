@@ -195,6 +195,7 @@ body::after {
     text-shadow: 0 0 26px rgba(255,255,255,.3), 0 0 70px rgba(0,110,255,.28); }
 }
 
+/* DOTS */
 .game-dots {
   display: flex;
   justify-content: center;
@@ -351,9 +352,11 @@ h1 em {
   .subtitle { font-size: 11px; line-height: 1.6; }
   .cta { padding: 16px 20px; font-size: 13px; }
 }
-@media (max-height: 680px) and (max-width: 430px) {
-  .page { justify-content: flex-start; padding-top: 14px; }
-  .tipster-cutout { display: none; }
+@media (max-height: 750px) and (max-width: 430px) {
+  .tipster-cutout img { height: 130px; }
+}
+@media (max-height: 640px) and (max-width: 430px) {
+  .tipster-cutout img { height: 100px; }
 }
 
 </style>
@@ -406,6 +409,7 @@ h1 em {
 </main>
 
 <script>
+// Cursor glow
 const glow = document.getElementById('cursor-glow');
 let mx = window.innerWidth / 2, my = window.innerHeight / 2;
 document.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; });
@@ -415,34 +419,36 @@ document.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; })
   requestAnimationFrame(tick);
 })();
 
+// Games — home color / away color / bg blobs / time
 const GAMES = [
   {
-    home: { name: 'Bragantino',    logo: 'rb-bragantino.9d5e0067.png', color: '#e30613' },
-    away: { name: 'Internacional', logo: 'internacional.319b9dc2.png', color: '#c8102e' },
+    home: { name: 'Bragantino',   logo: 'https://upload.wikimedia.org/wikipedia/commons/1/16/Red_Bull_Bragantino_logo.svg', color: '#e30613' },
+    away: { name: 'Internacional', logo: 'https://upload.wikimedia.org/wikipedia/commons/f/f0/Escudo_do_Sport_Club_Internacional.svg', color: '#c8102e' },
     bgLeft: '#e30613', bgRight: '#c8102e', time: '11:00'
   },
   {
-    home: { name: 'Vasco',       logo: 'vasco-da-gama.c7245b3e.png', color: '#9ca3af' },
-    away: { name: 'Atlético-MG', logo: 'atletico-mineiro.481ef277 (1).png', color: '#d97706' },
+    home: { name: 'Vasco',       logo: 'https://upload.wikimedia.org/wikipedia/commons/b/bd/Vasco_da_Gama_logo.svg', color: '#9ca3af' },
+    away: { name: 'Atlético-MG', logo: 'https://upload.wikimedia.org/wikipedia/commons/7/7c/Atletico_mineiro_galo.png', color: '#d97706' },
     bgLeft: '#6b7280', bgRight: '#d97706', time: '16:00'
   },
   {
-    home: { name: 'Palmeiras',   logo: 'palmeiras.e2be744c.png', color: '#16a34a' },
-    away: { name: 'Chapecoense', logo: 'chapecoense.7ba45a90.png', color: '#1d4ed8' },
+    home: { name: 'Palmeiras',   logo: 'https://upload.wikimedia.org/wikipedia/commons/1/10/Palmeiras_logo.svg', color: '#16a34a' },
+    away: { name: 'Chapecoense', logo: 'https://upload.wikimedia.org/wikipedia/pt/4/44/Chapecoense.png', color: '#1d4ed8' },
     bgLeft: '#15803d', bgRight: '#1d4ed8', time: '16:00'
   },
   {
-    home: { name: 'Cruzeiro',   logo: 'cruzeiro.d39bf864.png', color: '#1e40af' },
-    away: { name: 'Fluminense', logo: 'fluminense.21ef58d1.png', color: '#9f1239' },
+    home: { name: 'Cruzeiro',    logo: 'https://upload.wikimedia.org/wikipedia/commons/9/9d/Cruzeiro_Esporte_Clube_%28logo%29.svg', color: '#1e40af' },
+    away: { name: 'Fluminense',  logo: 'https://upload.wikimedia.org/wikipedia/commons/1/1b/Fluminense_FC_logo.svg', color: '#9f1239' },
     bgLeft: '#1e40af', bgRight: '#9f1239', time: '20:30'
   },
   {
-    home: { name: 'Remo',      logo: 'clube-do-remo.7d7d2703.png', color: '#1e3a8a' },
-    away: { name: 'São Paulo', logo: 'sao-paulo.84a524e3.png', color: '#dc2626' },
+    home: { name: 'Remo',      logo: 'https://upload.wikimedia.org/wikipedia/commons/f/f6/Clube_do_Remo.svg', color: '#1e3a8a' },
+    away: { name: 'São Paulo', logo: 'https://upload.wikimedia.org/wikipedia/commons/6/6f/Coat_of_arms_of_S%C3%A3o_Paulo_FC.svg', color: '#dc2626' },
     bgLeft: '#1e3a8a', bgRight: '#dc2626', time: '20:30'
   }
 ];
 
+// DOM refs
 const arena     = document.getElementById('el-arena');
 const homeLogo  = document.getElementById('home-logo');
 const awayLogo  = document.getElementById('away-logo');
@@ -452,6 +458,7 @@ const bgLeft    = document.getElementById('bg-left');
 const bgRight   = document.getElementById('bg-right');
 const dotsEl    = document.getElementById('game-dots');
 
+// Build dots
 GAMES.forEach((_, i) => {
   const d = document.createElement('div');
   d.className = 'gdot' + (i === 0 ? ' active' : '');
@@ -481,6 +488,7 @@ function applyGame(g) {
 
 function goTo(idx) {
   const next = (idx + GAMES.length) % GAMES.length;
+  // fade out teams + title
   gsap.to(['#home-team', '#away-team', '#h1-match'], {
     opacity: 0, duration: 0.25, ease: 'power2.in',
     onComplete: () => {
@@ -500,9 +508,11 @@ function resetAuto() {
   autoTimer = setInterval(() => goTo(current + 1), 4200);
 }
 
+// Init first game (no animation, entry GSAP handles it)
 applyGame(GAMES[0]);
 resetAuto();
 
+// Swipe mobile
 let startX = 0;
 document.addEventListener('touchstart', e => { startX = e.touches[0].clientX; }, { passive: true });
 document.addEventListener('touchend', e => {
@@ -510,6 +520,7 @@ document.addEventListener('touchend', e => {
   if (Math.abs(diff) > 50) diff > 0 ? goTo(current + 1) : goTo(current - 1);
 });
 
+// Entry animation (same as original PSG LP)
 gsap.set(['#el-badge', '#el-tipster', '#el-content', '#el-cta', '#game-dots'], { opacity: 0, y: 22 });
 gsap.set(['#home-team', '#away-team', '#vs'], { opacity: 0 });
 
