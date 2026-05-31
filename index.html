@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Brasileirão R18 — VIP</title>
+<title>Odd 02 — Rodada 18</title>
 <script>
 !function(f,b,e,v,n,t,s)
 {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -34,509 +34,532 @@ async function dispararLead(e) {
   window.location.href = 'https://ad.nexboard.cc/';
 }
 </script>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,800;1,900&display=swap" rel="stylesheet">
-<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,600;0,700;0,800;0,900;1,900&display=swap" rel="stylesheet">
 <style>
-
 *{ margin:0; padding:0; box-sizing:border-box; }
-
 html, body {
   font-family: 'Montserrat', sans-serif;
-  background: #03040b;
   color: #fff;
   -webkit-tap-highlight-color: transparent;
-  overflow-x: hidden;
+  min-height: 100%;
 }
-
-body::before {
-  content: '';
-  position: fixed; inset: 0;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
-  opacity: 0.03;
-  pointer-events: none;
-  z-index: 300;
-}
-
+body { background: #000; }
 body::after {
   content: '';
   position: fixed; inset: 0;
-  background:
-    linear-gradient(rgba(255,255,255,.018) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255,255,255,.018) 1px, transparent 1px);
-  background-size: 72px 72px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+  opacity: 0.035;
   pointer-events: none;
-  z-index: -1;
+  z-index: 0;
 }
-
-#cursor-glow {
-  position: fixed;
-  width: 460px; height: 460px;
-  border-radius: 50%;
-  background: radial-gradient(circle,
-    rgba(20,90,255,.18) 0%,
-    rgba(80,20,220,.06) 45%,
-    transparent 70%
-  );
-  pointer-events: none;
-  transform: translate(-50%, -50%);
-  filter: blur(32px);
-  z-index: 100;
-  will-change: left, top;
-}
-
-#bg-left {
-  position: fixed; border-radius: 50%;
-  width: 560px; height: 560px;
-  left: -200px; top: 50%; transform: translateY(-50%);
-  filter: blur(130px); opacity: .16;
-  pointer-events: none; z-index: -2;
-  transition: background 0.9s ease;
-}
-#bg-right {
-  position: fixed; border-radius: 50%;
-  width: 480px; height: 480px;
-  right: -180px; top: 50%; transform: translateY(-50%);
-  filter: blur(130px); opacity: .14;
-  pointer-events: none; z-index: -2;
-  transition: background 0.9s ease;
-}
-
 .page {
-  min-height: 100dvh;
+  position: relative;
+  z-index: 1;
+  max-width: 480px;
+  margin: 0 auto;
+  padding: 32px 20px 40px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  padding: 24px 20px;
-  gap: clamp(10px, 2.2vh, 18px);
+  gap: 20px;
+  min-height: 100dvh;
 }
-
 .badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 9px;
-  border: 1px solid rgba(255,255,255,.1);
-  background: rgba(255,255,255,.045);
-  backdrop-filter: blur(12px);
+  background: linear-gradient(90deg, #c49a00, #f5c518, #c49a00);
   border-radius: 999px;
-  padding: 7px 18px;
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 2.5px;
+  padding: 6px 20px;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 2px;
   text-transform: uppercase;
-  color: rgba(255,255,255,.5);
+  color: #000;
 }
-.badge-short { display: none; }
-.live-dot {
-  width: 6px; height: 6px; border-radius: 50%;
-  background: #ff3b3b;
-  box-shadow: 0 0 8px #ff3b3b;
-  animation: blink 1.4s infinite;
-  flex-shrink: 0;
+.hero { text-align: center; line-height: 1; }
+.hero-odd {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 6px;
 }
-@keyframes blink { 50% { opacity: .15; } }
+.hero-odd-word {
+  font-size: 52px;
+  font-weight: 900;
+  color: #fff;
+  text-shadow: 0 0 30px rgba(255,255,255,.2);
+  font-style: italic;
+}
+.hero-odd-num {
+  font-size: 90px;
+  font-weight: 900;
+  color: #f5c518;
+  text-shadow: 0 0 30px rgba(245,197,24,.6), 0 0 80px rgba(245,197,24,.3);
+  font-style: italic;
+  line-height: 1;
+}
+.subhead {
+  font-size: 18px;
+  font-weight: 800;
+  text-align: center;
+  line-height: 1.35;
+  letter-spacing: .5px;
+  text-transform: uppercase;
+}
+.subhead .hl-green { color: #4ade80; }
+.subhead .hl-gold  { color: #f5c518; }
 
-.arena {
+/* CAROUSEL */
+.carousel-wrap {
+  width: 100%;
+  position: relative;
+}
+.carousel-viewport {
+  width: 100%;
+  overflow: hidden;
+  border-radius: 16px;
+}
+.carousel-track {
+  display: flex;
+  transition: transform 0.45s cubic-bezier(.4,0,.2,1);
+  will-change: transform;
+}
+.match-card {
+  min-width: 100%;
+  background: rgba(0,0,0,.55);
+  border: 1.5px solid rgba(74,222,128,.35);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 0 30px rgba(74,222,128,.1), 0 0 60px rgba(74,222,128,.05), inset 0 0 40px rgba(0,0,0,.3);
+}
+.card-header {
+  background: rgba(255,255,255,.05);
+  border-bottom: 1px solid rgba(74,222,128,.2);
+  padding: 10px 16px;
   display: flex;
   align-items: center;
-  gap: 36px;
-  --c-home: #e30613;
-  --c-away: #c8102e;
+  justify-content: center;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1px;
 }
-
-.team {
-  width: 100px; height: 100px;
+.teams-row {
+  padding: 18px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  border-bottom: 1px solid rgba(255,255,255,.07);
+}
+.team-side {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  flex: 1;
+}
+.team-logo {
+  width: 64px; height: 64px;
   border-radius: 50%;
-  position: relative;
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.1);
   display: flex; align-items: center; justify-content: center;
+  overflow: hidden;
 }
-.team::before {
-  content: '';
-  position: absolute; inset: -1px; border-radius: 50%;
-  background: conic-gradient(from 0deg,
-    transparent 0%, var(--c-home) 18%, transparent 38%,
-    transparent 55%, var(--c-away) 73%, transparent 90%
-  );
-  animation: spin 4s linear infinite;
-  z-index: -1;
+.team-logo img { width: 46px; height: 46px; object-fit: contain; }
+.team-name {
+  font-size: 12px;
+  font-weight: 800;
+  text-align: center;
+  letter-spacing: .5px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,.85);
 }
-.team::after {
-  content: '';
-  position: absolute; inset: -10px; border-radius: 50%;
-  background: conic-gradient(from 0deg,
-    transparent, var(--c-home) 18%, transparent 38%,
-    var(--c-away) 68%, transparent 88%
-  );
-  filter: blur(14px); opacity: .6;
-  z-index: -2;
-  animation: spin 4s linear infinite;
+.vs-text {
+  font-size: 22px;
+  font-weight: 900;
+  color: rgba(255,255,255,.7);
+  letter-spacing: -1px;
+  flex-shrink: 0;
 }
-@keyframes spin { to { transform: rotate(360deg); } }
-
-.team-inner {
-  width: 92px; height: 92px; border-radius: 50%;
-  background: #07080f;
-  border: 1px solid rgba(255,255,255,.06);
-  display: flex; align-items: center; justify-content: center;
+.comp-row {
+  padding: 10px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  border-bottom: 1px solid rgba(255,255,255,.07);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,.6);
 }
-.team img {
-  width: 54px;
-  filter: drop-shadow(0 0 16px rgba(255,255,255,.1));
-}
-
-.vs {
-  font-size: 48px; font-weight: 900; letter-spacing: -2px;
+.day-pill {
+  background: #16a34a;
+  border-radius: 6px;
+  padding: 3px 10px;
+  font-size: 11px;
+  font-weight: 800;
   color: #fff;
-  text-shadow: 0 0 16px rgba(255,255,255,.2), 0 0 50px rgba(0,110,255,.18);
-  animation: pulse 2.8s ease-in-out infinite;
 }
-@keyframes pulse {
-  50% { transform: scale(1.06);
-    text-shadow: 0 0 26px rgba(255,255,255,.3), 0 0 70px rgba(0,110,255,.28); }
+.market-row {
+  padding: 12px 16px;
+  text-align: center;
+  border-bottom: 1px solid rgba(255,255,255,.07);
+}
+.market-label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #4ade80;
+  margin-bottom: 4px;
+}
+.market-name {
+  font-size: 15px;
+  font-weight: 800;
+  letter-spacing: .5px;
+  text-transform: uppercase;
+}
+.odds-row {
+  padding: 14px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+}
+.odd-from { display: flex; flex-direction: column; align-items: center; gap: 2px; }
+.odd-from-label { font-size: 10px; font-weight: 700; letter-spacing: 1.5px; color: rgba(255,255,255,.4); text-transform: uppercase; }
+.odd-from-val {
+  font-size: 28px; font-weight: 900; color: rgba(255,80,80,.7); position: relative;
+}
+.odd-from-val::after {
+  content: ''; position: absolute; top: 50%; left: -4px; right: -4px;
+  height: 2.5px; background: rgba(255,80,80,.8); transform: rotate(-8deg);
+}
+.odd-arrow { font-size: 28px; color: #4ade80; font-weight: 900; animation: arrow-pulse 1.2s ease-in-out infinite; }
+@keyframes arrow-pulse { 50% { transform: translateX(4px); opacity: .6; } }
+.odd-to { display: flex; flex-direction: column; align-items: center; gap: 2px; }
+.odd-to-label { font-size: 10px; font-weight: 700; letter-spacing: 1.5px; color: rgba(255,255,255,.4); text-transform: uppercase; }
+.odd-to-val {
+  font-size: 46px; font-weight: 900; color: #f5c518;
+  text-shadow: 0 0 20px rgba(245,197,24,.5); line-height: 1;
 }
 
 /* DOTS */
-.game-dots {
+.carousel-dots {
   display: flex;
   justify-content: center;
   gap: 8px;
+  margin-top: 12px;
 }
-.gdot {
-  height: 6px; width: 6px;
-  border-radius: 3px;
+.dot {
+  width: 8px; height: 8px;
+  border-radius: 50%;
   background: rgba(255,255,255,.2);
   cursor: pointer;
-  transition: background .3s, width .35s;
+  transition: background .3s, transform .3s;
 }
-.gdot.active {
-  background: rgba(255,255,255,.75);
-  width: 22px;
-}
-
-.tipster-cutout {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 8px;
-}
-.tipster-cutout img {
-  height: clamp(160px, 30vh, 280px);
-  width: auto;
-  display: block;
-  filter:
-    drop-shadow(0 0 30px rgba(0,90,255,.25))
-    drop-shadow(0 20px 40px rgba(0,0,0,.5));
-  animation: float 3s ease-in-out infinite;
-}
-@keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50%       { transform: translateY(-8px); }
-}
-.tipster-cutout::after {
-  content: '';
-  position: absolute;
-  bottom: 36px;
-  left: 50%; transform: translateX(-50%);
-  width: 160px; height: 18px;
-  background: radial-gradient(ellipse, rgba(0,80,255,.35), transparent 70%);
-  filter: blur(8px);
+.dot.active {
+  background: #f5c518;
+  transform: scale(1.3);
 }
 
-.content { text-align: center; }
-.eyebrow {
-  font-size: 10px; font-weight: 700;
-  letter-spacing: 3.5px; text-transform: uppercase;
-  color: rgba(60,150,255,.9); margin-bottom: 8px;
+.scarcity-box {
+  width: 100%;
+  background: rgba(245,197,24,.07);
+  border: 1px solid rgba(245,197,24,.2);
+  border-radius: 12px;
+  padding: 12px 16px;
+  text-align: center;
 }
-h1 {
-  font-size: clamp(24px, 8vw, 42px); font-weight: 900;
-  line-height: 1.1; letter-spacing: -1px;
-  margin-bottom: 8px;
-  word-break: break-word;
-}
-h1 em {
-  font-style: italic;
-  background: linear-gradient(90deg, #2b85ff, #8b3fff);
-  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-.subtitle {
-  font-size: 13px; color: rgba(255,255,255,.4);
-  line-height: 1.75; max-width: 400px; margin: 0 auto;
-}
-.scarcity {
-  color: #ff3b3b;
-  font-weight: 700;
-  text-shadow: 0 0 12px rgba(255,50,50,.4);
-}
+.scarcity-title { font-size: 13px; font-weight: 800; color: #f5c518; letter-spacing: .5px; margin-bottom: 4px; }
+.scarcity-sub { font-size: 12px; color: rgba(255,255,255,.55); font-weight: 600; }
 
-.cta-wrap {
-  display: flex; flex-direction: column;
-  align-items: center; gap: 10px;
-}
+.cta-wrap { width: 100%; display: flex; flex-direction: column; align-items: center; gap: 10px; }
 .cta {
-  position: relative; border: none; border-radius: 999px;
-  padding: 22px 64px;
-  font-family: 'Montserrat', sans-serif;
-  font-size: 16px; font-weight: 900;
-  letter-spacing: 2.5px; text-transform: uppercase;
-  color: #fff; cursor: pointer; text-decoration: none;
-  background: linear-gradient(90deg, #0c6ef5, #6221d4);
-  box-shadow:
-    0 0 40px rgba(0,100,255,.45),
-    0 0 90px rgba(80,20,210,.2),
-    0 20px 40px rgba(0,0,0,.5),
-    inset 0 1px 0 rgba(255,255,255,.2);
-  overflow: hidden;
-  transition: transform .2s, box-shadow .2s;
-  animation: cta-pulse 2.5s ease-in-out infinite;
+  width: 100%; border: none; border-radius: 14px; padding: 20px 24px;
+  font-family: 'Montserrat', sans-serif; font-size: 17px; font-weight: 900;
+  letter-spacing: 1.5px; text-transform: uppercase; color: #fff; cursor: pointer;
+  background: linear-gradient(135deg, #16a34a, #22c55e);
+  box-shadow: 0 0 35px rgba(34,197,94,.4), 0 0 80px rgba(34,197,94,.15), 0 16px 32px rgba(0,0,0,.4), inset 0 1px 0 rgba(255,255,255,.2);
+  display: flex; align-items: center; justify-content: center; gap: 12px;
+  overflow: hidden; position: relative; transition: transform .2s, box-shadow .2s;
+  animation: cta-pulse 2.2s ease-in-out infinite; text-decoration: none;
 }
 @keyframes cta-pulse {
-  50% {
-    box-shadow:
-      0 0 65px rgba(0,100,255,.65),
-      0 0 130px rgba(80,20,210,.3),
-      0 20px 40px rgba(0,0,0,.5),
-      inset 0 1px 0 rgba(255,255,255,.2);
-  }
+  50% { box-shadow: 0 0 55px rgba(34,197,94,.6), 0 0 110px rgba(34,197,94,.25), 0 16px 32px rgba(0,0,0,.4), inset 0 1px 0 rgba(255,255,255,.2); }
 }
-.cta:hover {
-  transform: translateY(-4px) scale(1.04);
-  animation: none;
-  box-shadow:
-    0 0 70px rgba(0,100,255,.7),
-    0 0 140px rgba(80,20,210,.35),
-    0 28px 50px rgba(0,0,0,.4),
-    inset 0 1px 0 rgba(255,255,255,.22);
-}
+.cta:hover { transform: translateY(-3px) scale(1.02); animation: none; }
 .cta::before {
-  content: '';
-  position: absolute; inset: 0;
-  background: linear-gradient(110deg, transparent 25%, rgba(255,255,255,.22) 50%, transparent 75%);
+  content: ''; position: absolute; inset: 0;
+  background: linear-gradient(110deg, transparent 30%, rgba(255,255,255,.18) 50%, transparent 70%);
   transform: translateX(-120%) skewX(-15deg);
-  animation: shine 3.2s infinite 1.4s;
+  animation: shine 3s infinite 1s;
 }
-@keyframes shine { to { transform: translateX(230%) skewX(-15deg); } }
+@keyframes shine { to { transform: translateX(220%) skewX(-15deg); } }
+.cta-icon { font-size: 22px; }
+.cta-text { line-height: 1; }
+.cta-arrow { font-size: 18px; opacity: .8; }
+.cta-trust { font-size: 11px; color: rgba(255,255,255,.3); font-weight: 500; }
+.cta-trust b { color: rgba(255,255,255,.5); }
 
-.trust {
-  font-size: 11px; color: rgba(255,255,255,.25);
-  font-weight: 500; letter-spacing: .3px;
+.disclaimer {
+  text-align: center; font-size: 10px; color: rgba(255,255,255,.2); line-height: 1.6; font-weight: 500;
 }
-.trust b { color: rgba(255,255,255,.48); font-weight: 600; }
+.disclaimer strong { color: rgba(255,255,255,.35); }
 
-@media (hover: none) { #cursor-glow { display: none; } }
-
-@media (max-width: 600px) {
-  .page { padding: 16px 16px; }
-  .badge { font-size: 10px; letter-spacing: 1.5px; padding: 7px 14px; }
-  .badge-text { display: none; }
-  .badge-short { display: inline; }
-  .arena { gap: 20px; }
-  .team { width: 84px; height: 84px; }
-  .team-inner { width: 76px; height: 76px; }
-  .team img { width: 46px; }
-  .vs { font-size: 36px; }
-  .eyebrow { font-size: 9px; }
-  .subtitle { font-size: 12px; }
-  .cta { width: 100%; max-width: 340px; padding: 18px 24px; font-size: 14px; letter-spacing: 1.5px; }
-  .trust { font-size: 11px; }
+@media (max-width: 430px) {
+  .page { padding: 16px 16px 20px; gap: 12px; }
+  .hero-odd-word { font-size: 38px; }
+  .hero-odd-num { font-size: 66px; }
+  .subhead { font-size: 15px; }
+  .teams-row { padding: 10px 12px; gap: 8px; }
+  .team-logo { width: 52px; height: 52px; }
+  .team-logo img { width: 38px; height: 38px; }
+  .team-name { font-size: 11px; }
+  .odd-to-val { font-size: 38px; }
+  .cta { font-size: 15px; padding: 15px 16px; }
 }
-@media (max-width: 390px) {
-  .page { padding: 12px 14px; }
-  .team { width: 72px; height: 72px; }
-  .team-inner { width: 64px; height: 64px; }
-  .team img { width: 38px; }
-  .vs { font-size: 28px; }
-  .arena { gap: 16px; }
-  .subtitle { font-size: 11px; line-height: 1.6; }
-  .cta { padding: 16px 20px; font-size: 13px; }
-}
-@media (max-height: 750px) and (max-width: 430px) {
-  .tipster-cutout img { height: 130px; }
-}
-@media (max-height: 640px) and (max-width: 430px) {
-  .tipster-cutout img { height: 100px; }
-}
-
 </style>
 </head>
 <body>
-
-<div id="cursor-glow"></div>
-<div id="bg-left"></div>
-<div id="bg-right"></div>
-
 <main class="page">
 
-  <div class="badge" id="el-badge">
-    <span class="live-dot"></span>
-    <span class="badge-text">Campeonato Brasileiro &nbsp;·&nbsp; Rodada 18 &nbsp;·&nbsp; <span id="badge-time">11:00</span></span>
-    <span class="badge-short">BRZ · R18</span>
-  </div>
+  <div class="badge">ODD 02 &nbsp;·&nbsp; RODADA 18</div>
 
-  <div class="arena" id="el-arena">
-    <div class="team" id="home-team">
-      <div class="team-inner">
-        <img id="home-logo" src="" alt="">
-      </div>
-    </div>
-    <div class="vs" id="vs">VS</div>
-    <div class="team" id="away-team">
-      <div class="team-inner">
-        <img id="away-logo" src="" alt="">
-      </div>
+  <div class="hero">
+    <div class="hero-odd">
+      <span class="hero-odd-word">ODD</span>
+      <span class="hero-odd-num">02</span>
     </div>
   </div>
 
-  <div class="game-dots" id="game-dots"></div>
+  <p class="subhead">
+    Odd 02 <span class="hl-green">exclusiva</span> nos jogos<br>
+    de <span class="hl-gold">Hoje</span>
+  </p>
 
-  <div class="tipster-cutout" id="el-tipster">
-    <img src="JP01LP.png" alt="Tipster">
+  <!-- CAROUSEL -->
+  <div class="carousel-wrap">
+    <div class="carousel-viewport">
+      <div class="carousel-track" id="track">
+
+        <!-- Jogo 1: Bragantino x Internacional -->
+        <div class="match-card">
+          <div class="card-header">⚽ Bragantino vs Internacional</div>
+          <div class="teams-row">
+            <div class="team-side">
+              <div class="team-logo">
+                <img src="rb-bragantino.9d5e0067.png" alt="Bragantino">
+              </div>
+              <div class="team-name">Bragantino</div>
+            </div>
+            <div class="vs-text">VS</div>
+            <div class="team-side">
+              <div class="team-logo">
+                <img src="internacional.319b9dc2.png" alt="Internacional">
+              </div>
+              <div class="team-name">Internacional</div>
+            </div>
+          </div>
+          <div class="comp-row">Rodada 18 · Brasileirão <span class="day-pill">11:00</span></div>
+          <div class="market-row">
+            <div class="market-label">Mercado</div>
+            <div class="market-name">🔒 Palpite exclusivo</div>
+          </div>
+          <div class="odds-row">
+            <div class="odd-from"><div class="odd-from-label">De</div><div class="odd-from-val">0.5</div></div>
+            <div class="odd-arrow">»</div>
+            <div class="odd-to"><div class="odd-to-label">Para</div><div class="odd-to-val">2.00</div></div>
+          </div>
+        </div>
+
+        <!-- Jogo 2: Vasco x Atlético-MG -->
+        <div class="match-card">
+          <div class="card-header">⚽ Vasco vs Atlético-MG</div>
+          <div class="teams-row">
+            <div class="team-side">
+              <div class="team-logo">
+                <img src="vasco-da-gama.c7245b3e.png" alt="Vasco">
+              </div>
+              <div class="team-name">Vasco</div>
+            </div>
+            <div class="vs-text">VS</div>
+            <div class="team-side">
+              <div class="team-logo">
+                <img src="atletico-mineiro.481ef277 (1).png" alt="Atlético-MG">
+              </div>
+              <div class="team-name">Atlético-MG</div>
+            </div>
+          </div>
+          <div class="comp-row">Rodada 18 · Brasileirão <span class="day-pill">16:00</span></div>
+          <div class="market-row">
+            <div class="market-label">Mercado</div>
+            <div class="market-name">🔒 Palpite exclusivo</div>
+          </div>
+          <div class="odds-row">
+            <div class="odd-from"><div class="odd-from-label">De</div><div class="odd-from-val">0.5</div></div>
+            <div class="odd-arrow">»</div>
+            <div class="odd-to"><div class="odd-to-label">Para</div><div class="odd-to-val">2.00</div></div>
+          </div>
+        </div>
+
+        <!-- Jogo 3: Palmeiras x Chapecoense -->
+        <div class="match-card">
+          <div class="card-header">⚽ Palmeiras vs Chapecoense</div>
+          <div class="teams-row">
+            <div class="team-side">
+              <div class="team-logo">
+                <img src="palmeiras.e2be744c.png" alt="Palmeiras">
+              </div>
+              <div class="team-name">Palmeiras</div>
+            </div>
+            <div class="vs-text">VS</div>
+            <div class="team-side">
+              <div class="team-logo">
+                <img src="chapecoense.7ba45a90.png" alt="Chapecoense">
+              </div>
+              <div class="team-name">Chapecoense</div>
+            </div>
+          </div>
+          <div class="comp-row">Rodada 18 · Brasileirão <span class="day-pill">16:00</span></div>
+          <div class="market-row">
+            <div class="market-label">Mercado</div>
+            <div class="market-name">🔒 Palpite exclusivo</div>
+          </div>
+          <div class="odds-row">
+            <div class="odd-from"><div class="odd-from-label">De</div><div class="odd-from-val">5.5</div></div>
+            <div class="odd-arrow">»</div>
+            <div class="odd-to"><div class="odd-to-label">Para</div><div class="odd-to-val">2.00</div></div>
+          </div>
+        </div>
+
+        <!-- Jogo 4: Cruzeiro x Fluminense -->
+        <div class="match-card">
+          <div class="card-header">⚽ Cruzeiro vs Fluminense</div>
+          <div class="teams-row">
+            <div class="team-side">
+              <div class="team-logo">
+                <img src="cruzeiro.d39bf864.png" alt="Cruzeiro">
+              </div>
+              <div class="team-name">Cruzeiro</div>
+            </div>
+            <div class="vs-text">VS</div>
+            <div class="team-side">
+              <div class="team-logo">
+                <img src="fluminense.21ef58d1.png" alt="Fluminense">
+              </div>
+              <div class="team-name">Fluminense</div>
+            </div>
+          </div>
+          <div class="comp-row">Rodada 18 · Brasileirão <span class="day-pill">20:30</span></div>
+          <div class="market-row">
+            <div class="market-label">Mercado</div>
+            <div class="market-name">🔒 Palpite exclusivo</div>
+          </div>
+          <div class="odds-row">
+            <div class="odd-from"><div class="odd-from-label">De</div><div class="odd-from-val">0.5</div></div>
+            <div class="odd-arrow">»</div>
+            <div class="odd-to"><div class="odd-to-label">Para</div><div class="odd-to-val">2.00</div></div>
+          </div>
+        </div>
+
+        <!-- Jogo 5: Remo x São Paulo -->
+        <div class="match-card">
+          <div class="card-header">⚽ Remo vs São Paulo</div>
+          <div class="teams-row">
+            <div class="team-side">
+              <div class="team-logo">
+                <img src="clube-do-remo.7d7d2703.png" alt="Remo">
+              </div>
+              <div class="team-name">Remo</div>
+            </div>
+            <div class="vs-text">VS</div>
+            <div class="team-side">
+              <div class="team-logo">
+                <img src="sao-paulo.84a524e3.png" alt="São Paulo">
+              </div>
+              <div class="team-name">São Paulo</div>
+            </div>
+          </div>
+          <div class="comp-row">Rodada 18 · Brasileirão <span class="day-pill">20:30</span></div>
+          <div class="market-row">
+            <div class="market-label">Mercado</div>
+            <div class="market-name">🔒 Palpite exclusivo</div>
+          </div>
+          <div class="odds-row">
+            <div class="odd-from"><div class="odd-from-label">De</div><div class="odd-from-val">0.5</div></div>
+            <div class="odd-arrow">»</div>
+            <div class="odd-to"><div class="odd-to-label">Para</div><div class="odd-to-val">2.00</div></div>
+          </div>
+        </div>
+
+      </div><!-- /track -->
+    </div><!-- /viewport -->
+
+    <div class="carousel-dots" id="dots"></div>
   </div>
 
-  <div class="content" id="el-content">
-    <div class="eyebrow">Análise Exclusiva VIP</div>
-    <h1 id="h1-match">Bragantino vs Internacional<br><em>Quem vence?</em></h1>
-    <p class="subtitle">Palpite exclusivo liberado. Vagas se esgotando —<br><span class="scarcity">acesso só para os primeiros.</span></p>
+  <div class="scarcity-box">
+    <div class="scarcity-title">⏰ OFERTA POR TEMPO LIMITADO!</div>
+    <div class="scarcity-sub">Garanta agora sua Odd 02 antes que esgote.</div>
   </div>
 
-  <div class="cta-wrap" id="el-cta">
-    <a href="https://ad.nexboard.cc/" class="cta" onclick="dispararLead(event)">PEGAR AGORA</a>
-    <p class="trust">⚠️ Restam poucas vagas &nbsp;·&nbsp; <b>Acesso gratuito</b></p>
+  <div class="cta-wrap">
+    <a href="https://ad.nexboard.cc/" class="cta" onclick="dispararLead(event)">
+      <span class="cta-icon">📲</span>
+      <span class="cta-text">RECEBER NO WHATSAPP</span>
+      <span class="cta-arrow">›</span>
+    </a>
+    <p class="cta-trust">Acesso gratuito &nbsp;·&nbsp; <b>Sem cadastro</b></p>
+  </div>
+
+  <div class="disclaimer">
+    <strong>+18 · Jogue com responsabilidade.</strong><br>
+    Apostas envolvem risco de perda. Jogar pode causar dependência.
   </div>
 
 </main>
 
 <script>
-// Cursor glow
-const glow = document.getElementById('cursor-glow');
-let mx = window.innerWidth / 2, my = window.innerHeight / 2;
-document.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; });
-(function tick() {
-  glow.style.left = mx + 'px';
-  glow.style.top  = my + 'px';
-  requestAnimationFrame(tick);
-})();
-
-// Games — home color / away color / bg blobs / time
-const GAMES = [
-  {
-    home: { name: 'Bragantino',   logo: 'https://upload.wikimedia.org/wikipedia/commons/1/16/Red_Bull_Bragantino_logo.svg', color: '#e30613' },
-    away: { name: 'Internacional', logo: 'https://upload.wikimedia.org/wikipedia/commons/f/f0/Escudo_do_Sport_Club_Internacional.svg', color: '#c8102e' },
-    bgLeft: '#e30613', bgRight: '#c8102e', time: '11:00'
-  },
-  {
-    home: { name: 'Vasco',       logo: 'https://upload.wikimedia.org/wikipedia/commons/b/bd/Vasco_da_Gama_logo.svg', color: '#9ca3af' },
-    away: { name: 'Atlético-MG', logo: 'https://upload.wikimedia.org/wikipedia/commons/7/7c/Atletico_mineiro_galo.png', color: '#d97706' },
-    bgLeft: '#6b7280', bgRight: '#d97706', time: '16:00'
-  },
-  {
-    home: { name: 'Palmeiras',   logo: 'https://upload.wikimedia.org/wikipedia/commons/1/10/Palmeiras_logo.svg', color: '#16a34a' },
-    away: { name: 'Chapecoense', logo: 'https://upload.wikimedia.org/wikipedia/pt/4/44/Chapecoense.png', color: '#1d4ed8' },
-    bgLeft: '#15803d', bgRight: '#1d4ed8', time: '16:00'
-  },
-  {
-    home: { name: 'Cruzeiro',    logo: 'https://upload.wikimedia.org/wikipedia/commons/9/9d/Cruzeiro_Esporte_Clube_%28logo%29.svg', color: '#1e40af' },
-    away: { name: 'Fluminense',  logo: 'https://upload.wikimedia.org/wikipedia/commons/1/1b/Fluminense_FC_logo.svg', color: '#9f1239' },
-    bgLeft: '#1e40af', bgRight: '#9f1239', time: '20:30'
-  },
-  {
-    home: { name: 'Remo',      logo: 'https://upload.wikimedia.org/wikipedia/commons/f/f6/Clube_do_Remo.svg', color: '#1e3a8a' },
-    away: { name: 'São Paulo', logo: 'https://upload.wikimedia.org/wikipedia/commons/6/6f/Coat_of_arms_of_S%C3%A3o_Paulo_FC.svg', color: '#dc2626' },
-    bgLeft: '#1e3a8a', bgRight: '#dc2626', time: '20:30'
-  }
-];
-
-// DOM refs
-const arena     = document.getElementById('el-arena');
-const homeLogo  = document.getElementById('home-logo');
-const awayLogo  = document.getElementById('away-logo');
-const h1Match   = document.getElementById('h1-match');
-const badgeTime = document.getElementById('badge-time');
-const bgLeft    = document.getElementById('bg-left');
-const bgRight   = document.getElementById('bg-right');
-const dotsEl    = document.getElementById('game-dots');
-
-// Build dots
-GAMES.forEach((_, i) => {
-  const d = document.createElement('div');
-  d.className = 'gdot' + (i === 0 ? ' active' : '');
-  d.addEventListener('click', () => goTo(i));
-  dotsEl.appendChild(d);
-});
-
+const track = document.getElementById('track');
+const dotsEl = document.getElementById('dots');
+const total = track.children.length;
 let current = 0;
 let autoTimer;
 
-function updateDots() {
-  document.querySelectorAll('.gdot').forEach((d, i) => d.classList.toggle('active', i === current));
-}
-
-function applyGame(g) {
-  homeLogo.src  = g.home.logo;
-  homeLogo.alt  = g.home.name;
-  awayLogo.src  = g.away.logo;
-  awayLogo.alt  = g.away.name;
-  h1Match.innerHTML = `${g.home.name} vs ${g.away.name}<br><em>Quem vence?</em>`;
-  badgeTime.textContent = g.time;
-  arena.style.setProperty('--c-home', g.home.color);
-  arena.style.setProperty('--c-away', g.away.color);
-  bgLeft.style.background  = g.bgLeft;
-  bgRight.style.background = g.bgRight;
+// criar dots
+for (let i = 0; i < total; i++) {
+  const d = document.createElement('div');
+  d.className = 'dot' + (i === 0 ? ' active' : '');
+  d.addEventListener('click', () => goTo(i));
+  dotsEl.appendChild(d);
 }
 
 function goTo(idx) {
-  const next = (idx + GAMES.length) % GAMES.length;
-  // fade out teams + title
-  gsap.to(['#home-team', '#away-team', '#h1-match'], {
-    opacity: 0, duration: 0.25, ease: 'power2.in',
-    onComplete: () => {
-      current = next;
-      applyGame(GAMES[current]);
-      updateDots();
-      gsap.to(['#home-team', '#away-team', '#h1-match'], {
-        opacity: 1, duration: 0.35, ease: 'power2.out'
-      });
-    }
-  });
+  current = (idx + total) % total;
+  track.style.transform = `translateX(-${current * 100}%)`;
+  document.querySelectorAll('.dot').forEach((d, i) => d.classList.toggle('active', i === current));
   resetAuto();
 }
 
+function next() { goTo(current + 1); }
+
 function resetAuto() {
   clearInterval(autoTimer);
-  autoTimer = setInterval(() => goTo(current + 1), 4200);
+  autoTimer = setInterval(next, 3500);
 }
 
-// Init first game (no animation, entry GSAP handles it)
-applyGame(GAMES[0]);
 resetAuto();
 
-// Swipe mobile
+// swipe mobile
 let startX = 0;
-document.addEventListener('touchstart', e => { startX = e.touches[0].clientX; }, { passive: true });
-document.addEventListener('touchend', e => {
+track.addEventListener('touchstart', e => { startX = e.touches[0].clientX; }, { passive: true });
+track.addEventListener('touchend', e => {
   const diff = startX - e.changedTouches[0].clientX;
-  if (Math.abs(diff) > 50) diff > 0 ? goTo(current + 1) : goTo(current - 1);
+  if (Math.abs(diff) > 40) diff > 0 ? next() : goTo(current - 1);
 });
-
-// Entry animation (same as original PSG LP)
-gsap.set(['#el-badge', '#el-tipster', '#el-content', '#el-cta', '#game-dots'], { opacity: 0, y: 22 });
-gsap.set(['#home-team', '#away-team', '#vs'], { opacity: 0 });
-
-const tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
-tl.fromTo('#home-team', { opacity: 0, x: -80 }, { opacity: 1, x: 0, duration: 1.0 }, 0)
-  .fromTo('#away-team', { opacity: 0, x: 80  }, { opacity: 1, x: 0, duration: 1.0 }, 0)
-  .fromTo('#vs',        { opacity: 0, scale: 0 }, { opacity: 1, scale: 1, duration: .7, ease: 'back.out(2)' }, .4)
-  .to('#el-badge',   { opacity: 1, y: 0, duration: .6 }, .15)
-  .to('#game-dots',  { opacity: 1, y: 0, duration: .5 }, .6)
-  .to('#el-tipster', { opacity: 1, y: 0, duration: .7 }, .5)
-  .to('#el-content', { opacity: 1, y: 0, duration: .6 }, .7)
-  .to('#el-cta',     { opacity: 1, y: 0, duration: .6 }, .85);
-
-gsap.to('#home-team', { y: -7, duration: 2.3, repeat: -1, yoyo: true, ease: 'sine.inOut', delay: 1.5 });
-gsap.to('#away-team', { y: -7, duration: 2.8, repeat: -1, yoyo: true, ease: 'sine.inOut', delay: 1.7 });
 </script>
-
 </body>
 </html>
