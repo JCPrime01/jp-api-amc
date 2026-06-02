@@ -4,6 +4,7 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Odd 02 — Rodada 18</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,600;0,700;0,800;0,900;1,900&display=swap" rel="stylesheet">
 <script>
 !function(f,b,e,v,n,t,s)
 {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -34,7 +35,6 @@ async function dispararLead(e) {
   window.location.href = 'https://ad.nexboard.cc/';
 }
 </script>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,600;0,700;0,800;0,900;1,900&display=swap" rel="stylesheet">
 <style>
 *{ margin:0; padding:0; box-sizing:border-box; }
 html, body {
@@ -42,19 +42,18 @@ html, body {
   color: #fff;
   -webkit-tap-highlight-color: transparent;
   min-height: 100%;
+  background: #000;
+  position: relative;
 }
-body { background: #000; }
 body::after {
   content: '';
   position: fixed; inset: 0;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
   opacity: 0.035;
   pointer-events: none;
-  z-index: 0;
+  z-index: -1;
 }
 .page {
-  position: relative;
-  z-index: 1;
   max-width: 480px;
   margin: 0 auto;
   padding: 32px 20px 40px;
@@ -62,7 +61,7 @@ body::after {
   flex-direction: column;
   align-items: center;
   gap: 20px;
-  min-height: 100dvh;
+  min-height: 100vh;
 }
 .badge {
   background: linear-gradient(90deg, #c49a00, #f5c518, #c49a00);
@@ -107,16 +106,8 @@ body::after {
 .subhead .hl-green { color: #4ade80; }
 .subhead .hl-gold  { color: #f5c518; }
 
-/* CAROUSEL */
-.carousel-wrap {
-  width: 100%;
-  position: relative;
-}
-.carousel-viewport {
-  width: 100%;
-  overflow: hidden;
-  border-radius: 16px;
-}
+.carousel-wrap { width: 100%; }
+.carousel-viewport { width: 100%; overflow: hidden; border-radius: 16px; }
 .carousel-track {
   display: flex;
   transition: transform 0.45s cubic-bezier(.4,0,.2,1);
@@ -230,9 +221,7 @@ body::after {
 }
 .odd-from { display: flex; flex-direction: column; align-items: center; gap: 2px; }
 .odd-from-label { font-size: 10px; font-weight: 700; letter-spacing: 1.5px; color: rgba(255,255,255,.4); text-transform: uppercase; }
-.odd-from-val {
-  font-size: 28px; font-weight: 900; color: rgba(255,80,80,.7); position: relative;
-}
+.odd-from-val { font-size: 28px; font-weight: 900; color: rgba(255,80,80,.7); position: relative; }
 .odd-from-val::after {
   content: ''; position: absolute; top: 50%; left: -4px; right: -4px;
   height: 2.5px; background: rgba(255,80,80,.8); transform: rotate(-8deg);
@@ -246,24 +235,13 @@ body::after {
   text-shadow: 0 0 20px rgba(245,197,24,.5); line-height: 1;
 }
 
-/* DOTS */
-.carousel-dots {
-  display: flex;
-  justify-content: center;
-  gap: 8px;
-  margin-top: 12px;
-}
+.carousel-dots { display: flex; justify-content: center; gap: 8px; margin-top: 12px; }
 .dot {
-  width: 8px; height: 8px;
-  border-radius: 50%;
-  background: rgba(255,255,255,.2);
-  cursor: pointer;
+  width: 8px; height: 8px; border-radius: 50%;
+  background: rgba(255,255,255,.2); cursor: pointer;
   transition: background .3s, transform .3s;
 }
-.dot.active {
-  background: #f5c518;
-  transform: scale(1.3);
-}
+.dot.active { background: #f5c518; transform: scale(1.3); }
 
 .scarcity-box {
   width: 100%;
@@ -326,7 +304,7 @@ body::after {
 <body>
 <main class="page">
 
-  <div class="badge">ODD 02 &nbsp;·&nbsp; RODADA 18</div>
+  <div class="badge">ODD 02</div>
 
   <div class="hero">
     <div class="hero-odd">
@@ -340,7 +318,6 @@ body::after {
     de <span class="hl-gold">Hoje</span>
   </p>
 
-  <!-- CAROUSEL -->
   <div class="carousel-wrap">
     <div class="carousel-viewport">
       <div class="carousel-track" id="track">
@@ -495,9 +472,8 @@ body::after {
           </div>
         </div>
 
-      </div><!-- /track -->
-    </div><!-- /viewport -->
-
+      </div>
+    </div>
     <div class="carousel-dots" id="dots"></div>
   </div>
 
@@ -529,7 +505,6 @@ const total = track.children.length;
 let current = 0;
 let autoTimer;
 
-// criar dots
 for (let i = 0; i < total; i++) {
   const d = document.createElement('div');
   d.className = 'dot' + (i === 0 ? ' active' : '');
@@ -553,7 +528,6 @@ function resetAuto() {
 
 resetAuto();
 
-// swipe mobile
 let startX = 0;
 track.addEventListener('touchstart', e => { startX = e.touches[0].clientX; }, { passive: true });
 track.addEventListener('touchend', e => {
