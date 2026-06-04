@@ -19,7 +19,7 @@ fbq('track', 'PageView');
 async function dispararLead(e) {
   e.preventDefault();
   const eventId = 'cr_' + Date.now();
-  fbq('track', 'Contact', { currency: 'BRL', value: 0 }, { eventID: eventId });
+  fbq('track', 'Purchase', { currency: 'BRL', value: 0 }, { eventID: eventId });
   try {
     await fetch('https://track-amc-production.up.railway.app/api/lead', {
       method: 'POST',
