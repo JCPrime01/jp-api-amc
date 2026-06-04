@@ -14,14 +14,14 @@ n.queue=[];t=b.createElement(e);t.async=!0;
 t.src=v;s=b.getElementsByTagName(e)[0];
 s.parentNode.insertBefore(t,s)}(window, document,'script',
 'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '1285074343124616');
+fbq('init', '1346675563469865');
 fbq('track', 'PageView');
 async function dispararLead(e) {
   e.preventDefault();
   const eventId = 'cr_' + Date.now();
   fbq('track', 'Contact', { currency: 'BRL', value: 0 }, { eventID: eventId });
   try {
-    await fetch('https://track-jp-production.up.railway.app/api/lead', {
+    await fetch('https://track-amc-production.up.railway.app/api/lead', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
