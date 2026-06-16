@@ -505,10 +505,6 @@ nav{
 <nav>
   <div class="container">
     <div class="nav-inner">
-      <a href="#" class="logo">
-        <div class="logo-badge">⚽</div>
-        <span class="logo-text">ODD<span>100</span></span>
-      </a>
       <span class="nav-badge">🔒 Gratuito</span>
     </div>
   </div>
@@ -651,27 +647,7 @@ matches.forEach((m, i) => {
         <span class="team-abbr">${m.a2}</span>
       </div>
     </div>
-    <div class="match-odds">
-      <div class="odd-left">
-        <span class="odd-label">Mercado</span>
-        <span class="odd-market-tag">🎯 ${m.market}</span>
-      </div>
-      <div class="odd-right">
-        <div class="lock-icon">${isLocked ? '🔒' : '✅'}</div>
-        <div>
-          <div class="odd-from">
-            <span class="odd-striked">${m.oddOld}</span>
-          </div>
-          <div class="odd-big${isLocked ? ' gradient-text' : ''}">${m.odd}</div>
-          <div class="odd-big-label">odd atual</div>
-        </div>
-      </div>
-    </div>
-    ${isLocked ? `<div style="margin-top:16px;text-align:center">
-      <a href="https://ad.nexboard.cc/" onclick="dispararLead(event)" style="display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,#00FF88,#00CC6A);color:#060606;font-size:13px;font-weight:800;padding:11px 28px;border-radius:999px;text-decoration:none;letter-spacing:0.5px;">
-        🔓 REVELAR ODD NO WHATSAPP
-      </a>
-    </div>` : ''}
+
   `;
   cardsEl.appendChild(card);
 });
