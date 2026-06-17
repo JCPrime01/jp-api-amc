@@ -601,27 +601,27 @@ nav{
 /* ── DATA ── */
 const matches = [
   {
-    f1:'🇵🇹', t1:'Portugal',  a1:'POR',
-    f2:'🇨🇩', t2:'RD Congo', a2:'COD',
-    time:'14:00', phase:'Fase de Grupos · Rodada 1',
-    market:'Vitória Portugal', oddOld:'2.10', odd:'1.40', locked:false
+    f1:'🇨🇿', t1:'Tchéquia',  a1:'CZE',
+    f2:'🇿🇦', t2:'África do Sul', a2:'RSA',
+    time:'13:00', phase:'Fase de Grupos · Rodada 2',
+    market:'ODD 100', oddOld:'???', odd:'???', locked:true
   },
   {
-    f1:'🇬🇧', t1:'Inglaterra', a1:'ENG',
-    f2:'🇭🇷', t2:'Croácia',   a2:'CRO',
-    time:'17:00', phase:'Fase de Grupos · Rodada 1',
-    market:'Ambas Marcam', oddOld:'3.50', odd:'2.80', locked:false
+    f1:'🇨🇭', t1:'Suíça',  a1:'SUI',
+    f2:'🇧🇦', t2:'Bósnia & Herzegovina', a2:'BIH',
+    time:'16:00', phase:'Fase de Grupos · Rodada 2',
+    market:'ODD 100', oddOld:'???', odd:'???', locked:true
   },
   {
-    f1:'🇬🇭', t1:'Gana',    a1:'GHA',
-    f2:'🇵🇦', t2:'Panamá',  a2:'PAN',
-    time:'20:00', phase:'Fase de Grupos · Rodada 1',
-    market:'Ambas Marcam', oddOld:'3.50', odd:'2.80', locked:false
+    f1:'🇨🇦', t1:'Canadá', a1:'CAN',
+    f2:'🇶🇦', t2:'Qatar',  a2:'QAT',
+    time:'19:00', phase:'Fase de Grupos · Rodada 2',
+    market:'ODD 100', oddOld:'???', odd:'???', locked:true
   },
   {
-    f1:'🇺🇿', t1:'Uzbequistão', a1:'UZB',
-    f2:'🇨🇴', t2:'Colômbia',   a2:'COL',
-    time:'23:00', phase:'Fase de Grupos · Rodada 1',
+    f1:'🇲🇽', t1:'México', a1:'MEX',
+    f2:'🇰🇷', t2:'República da Coreia', a2:'KOR',
+    time:'22:00', phase:'Fase de Grupos · Rodada 2',
     market:'ODD 100', oddOld:'???', odd:'???', locked:true
   },
 ];
@@ -660,10 +660,10 @@ matches.forEach((m, i) => {
 
 /* ── TICKER ── */
 const tickerData = [
-  { f1:'🇵🇹', t1:'Portugal',     f2:'🇨🇩', t2:'RD Congo',  time:'14:00' },
-  { f1:'🇬🇧', t1:'Inglaterra',  f2:'🇭🇷', t2:'Croácia',   time:'17:00' },
-  { f1:'🇬🇭', t1:'Gana',         f2:'🇵🇦', t2:'Panamá',    time:'20:00' },
-  { f1:'🇺🇿', t1:'Uzbequistão',  f2:'🇨🇴', t2:'Colômbia',  time:'23:00' },
+  { f1:'🇨🇿', t1:'Tchéquia',   f2:'🇿🇦', t2:'África do Sul',       time:'13:00' },
+  { f1:'🇨🇭', t1:'Suíça',      f2:'🇧🇦', t2:'Bósnia & Herzegovina', time:'16:00' },
+  { f1:'🇨🇦', t1:'Canadá',     f2:'🇶🇦', t2:'Qatar',                time:'19:00' },
+  { f1:'🇲🇽', t1:'México',     f2:'🇰🇷', t2:'Rep. da Coreia',       time:'22:00' },
 ];
 const inner = document.getElementById('tickerInner');
 let tickerHTML = '';
