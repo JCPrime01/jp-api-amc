@@ -601,27 +601,21 @@ nav{
 /* ── DATA ── */
 const matches = [
   {
-    f1:'🇨🇿', t1:'Tchéquia',  a1:'CZE',
-    f2:'🇿🇦', t2:'África do Sul', a2:'RSA',
-    time:'13:00', phase:'Fase de Grupos · Rodada 2',
-    market:'ODD 100', oddOld:'???', odd:'???', locked:true
-  },
-  {
-    f1:'🇨🇭', t1:'Suíça',  a1:'SUI',
-    f2:'🇧🇦', t2:'Bósnia & Herzegovina', a2:'BIH',
+    f1:'🇺🇸', t1:'Estados Unidos',  a1:'USA',
+    f2:'🇦🇺', t2:'Austrália', a2:'AUS',
     time:'16:00', phase:'Fase de Grupos · Rodada 2',
     market:'ODD 100', oddOld:'???', odd:'???', locked:true
   },
   {
-    f1:'🇨🇦', t1:'Canadá', a1:'CAN',
-    f2:'🇶🇦', t2:'Qatar',  a2:'QAT',
+    f1:'🏴', t1:'Escócia',  a1:'SCO',
+    f2:'🇲🇦', t2:'Marrocos', a2:'MAR',
     time:'19:00', phase:'Fase de Grupos · Rodada 2',
     market:'ODD 100', oddOld:'???', odd:'???', locked:true
   },
   {
-    f1:'🇲🇽', t1:'México', a1:'MEX',
-    f2:'🇰🇷', t2:'República da Coreia', a2:'KOR',
-    time:'22:00', phase:'Fase de Grupos · Rodada 2',
+    f1:'🇧🇷', t1:'Brasil', a1:'BRA',
+    f2:'🇭🇹', t2:'Haiti',  a2:'HAI',
+    time:'21:30', phase:'Fase de Grupos · Rodada 2',
     market:'ODD 100', oddOld:'???', odd:'???', locked:true
   },
 ];
@@ -660,10 +654,9 @@ matches.forEach((m, i) => {
 
 /* ── TICKER ── */
 const tickerData = [
-  { f1:'🇨🇿', t1:'Tchéquia',   f2:'🇿🇦', t2:'África do Sul',       time:'13:00' },
-  { f1:'🇨🇭', t1:'Suíça',      f2:'🇧🇦', t2:'Bósnia & Herzegovina', time:'16:00' },
-  { f1:'🇨🇦', t1:'Canadá',     f2:'🇶🇦', t2:'Qatar',                time:'19:00' },
-  { f1:'🇲🇽', t1:'México',     f2:'🇰🇷', t2:'Rep. da Coreia',       time:'22:00' },
+  { f1:'🇺🇸', t1:'Estados Unidos',  f2:'🇦🇺', t2:'Austrália',  time:'16:00' },
+  { f1:'🏴', t1:'Escócia',              f2:'🇲🇦', t2:'Marrocos',   time:'19:00' },
+  { f1:'🇧🇷', t1:'Brasil',          f2:'🇭🇹', t2:'Haiti',      time:'21:30' },
 ];
 const inner = document.getElementById('tickerInner');
 let tickerHTML = '';
