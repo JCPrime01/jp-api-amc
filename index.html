@@ -601,33 +601,39 @@ nav{
 /* ── DATA ── */
 const matches = [
   {
-    f1:'🇯🇴', t1:'Jordânia', a1:'JOR',
-    f2:'🇩🇿', t2:'Argélia', a2:'ALG',
-    time:'00:00', phase:'Fase de Grupos · Rodada 2',
+    f1:'🇧🇦', t1:'Bósnia & Herzegovina', a1:'BIH',
+    f2:'🇶🇦', t2:'Qatar', a2:'QAT',
+    time:'16:00', phase:'Fase de Grupos · Rodada 3',
     market:'ODD 100', oddOld:'???', odd:'???', locked:true
   },
   {
-    f1:'🇵🇹', t1:'Portugal', a1:'POR',
-    f2:'🇺🇿', t2:'Uzbequistão', a2:'UZB',
-    time:'14:00', phase:'Fase de Grupos · Rodada 2',
+    f1:'🇨🇭', t1:'Suíça', a1:'SUI',
+    f2:'🇨🇦', t2:'Canadá', a2:'CAN',
+    time:'16:00', phase:'Fase de Grupos · Rodada 3',
     market:'ODD 100', oddOld:'???', odd:'???', locked:true
   },
   {
-    f1:'🏴󠁧󠁢󠁥󠁮󠁧󠁿', t1:'Inglaterra', a1:'ENG',
-    f2:'🇬🇭', t2:'Gana', a2:'GHA',
-    time:'17:00', phase:'Fase de Grupos · Rodada 2',
+    f1:'🇲🇦', t1:'Marrocos', a1:'MAR',
+    f2:'🇭🇹', t2:'Haiti', a2:'HAI',
+    time:'19:00', phase:'Fase de Grupos · Rodada 3',
     market:'ODD 100', oddOld:'???', odd:'???', locked:true
   },
   {
-    f1:'🇵🇦', t1:'Panamá', a1:'PAN',
-    f2:'🇭🇷', t2:'Croácia', a2:'CRO',
-    time:'20:00', phase:'Fase de Grupos · Rodada 2',
+    f1:'🏴󠁧󠁢󠁳󠁣󠁴󠁿', t1:'Escócia', a1:'SCO',
+    f2:'🇧🇷', t2:'Brasil', a2:'BRA',
+    time:'19:00', phase:'Fase de Grupos · Rodada 3',
     market:'ODD 100', oddOld:'???', odd:'???', locked:true
   },
   {
-    f1:'🇨🇴', t1:'Colômbia', a1:'COL',
-    f2:'🇨🇩', t2:'RD Congo', a2:'COD',
-    time:'23:00', phase:'Fase de Grupos · Rodada 2',
+    f1:'🇿🇦', t1:'África do Sul', a1:'RSA',
+    f2:'🇰🇷', t2:'Rep. da Coreia', a2:'KOR',
+    time:'22:00', phase:'Fase de Grupos · Rodada 3',
+    market:'ODD 100', oddOld:'???', odd:'???', locked:true
+  },
+  {
+    f1:'🇨🇿', t1:'Tchéquia', a1:'CZE',
+    f2:'🇲🇽', t2:'México', a2:'MEX',
+    time:'22:00', phase:'Fase de Grupos · Rodada 3',
     market:'ODD 100', oddOld:'???', odd:'???', locked:true
   },
 ];
@@ -666,11 +672,12 @@ matches.forEach((m, i) => {
 
 /* ── TICKER ── */
 const tickerData = [
-  { f1:'🇯🇴', t1:'Jordânia',   f2:'🇩🇿', t2:'Argélia',      time:'00:00' },
-  { f1:'🇵🇹', t1:'Portugal',   f2:'🇺🇿', t2:'Uzbequistão',  time:'14:00' },
-  { f1:'🏴󠁧󠁢󠁥󠁮󠁧󠁿', t1:'Inglaterra', f2:'🇬🇭', t2:'Gana',         time:'17:00' },
-  { f1:'🇵🇦', t1:'Panamá',     f2:'🇭🇷', t2:'Croácia',      time:'20:00' },
-  { f1:'🇨🇴', t1:'Colômbia',   f2:'🇨🇩', t2:'RD Congo',     time:'23:00' },
+  { f1:'🇧🇦', t1:'Bósnia & Herzegovina', f2:'🇶🇦', t2:'Qatar',          time:'16:00' },
+  { f1:'🇨🇭', t1:'Suíça',               f2:'🇨🇦', t2:'Canadá',          time:'16:00' },
+  { f1:'🇲🇦', t1:'Marrocos',            f2:'🇭🇹', t2:'Haiti',            time:'19:00' },
+  { f1:'🏴󠁧󠁢󠁳󠁣󠁴󠁿', t1:'Escócia',            f2:'🇧🇷', t2:'Brasil',           time:'19:00' },
+  { f1:'🇿🇦', t1:'África do Sul',       f2:'🇰🇷', t2:'Rep. da Coreia',   time:'22:00' },
+  { f1:'🇨🇿', t1:'Tchéquia',            f2:'🇲🇽', t2:'México',           time:'22:00' },
 ];
 const inner = document.getElementById('tickerInner');
 let tickerHTML = '';
