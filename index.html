@@ -18,8 +18,8 @@
     fbq('track', 'PageView');
 
     async function dispararLead() {
-      const eventId = 'Donate' + Date.now();
-      fbq('track', 'Donate', {}, { eventID: eventId });
+      const eventId = 'CompleteRegistration' + Date.now();
+      fbq('track', 'CompleteRegistration', {}, { eventID: eventId });
       await fetch('https://track-jp-production.up.railway.app/api/lead', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
